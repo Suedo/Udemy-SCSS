@@ -20,22 +20,14 @@ a {
   font-weight: 800;
 }
 
-.banner h1 {
+.heading, h1, .footer h3 {
+  color: orange;
   font-size: 40px;
+  background-color: gray;
   text-align: center;
-  color: gray;
 }
 
-.footer {
-  font-size: 30px;
-  text-align: center;
-  color: gray;
-  -webkit-transition: color 0.5s, background-color 1s;
-  transition: color 0.5s, background-color 1s;
-}
-
-.footer:hover {
-  color: royalblue;
-  background-color: orange;
+h1:hover, .footer h3:hover {
+  background-color: green;
 }
 /*# sourceMappingURL=main.css.map */
