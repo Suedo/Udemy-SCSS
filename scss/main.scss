@@ -1,3 +1,5 @@
+@import "./_mixinHeadings"; // import other scss files like this
+
 $color-primary: orange;
 $color-secondary: gray;
 $color-tertiary: royalblue;
@@ -28,41 +30,22 @@ a {
   }
 }
 
-// // 50px is default value
-// @mixin headingStyles($fontsize: 50px) {
-//   font-size: $fontsize;
-//   text-align: center;
-//   color: $color-secondary;
-// }
-
-// // these '...' are very important, without this spread, it will fail
-// @mixin transition($param...) {
-//   transition: $param;
-// }
-
-// .banner h1 {
-//   $color-secondary: rgb(221, 129, 75); // overriding color
-//   // $color-secondary: rgb(221, 129, 75) !global; // overriding color globally
-
-//   @include headingStyles($font-lg);
-// }
-
-// .footer {
-//   @include headingStyles($font-md);
-//   @include transition(color 0.5s, background-color 1s);
-
-//   &:hover {
-//     color: $color-tertiary;
-//     background-color: $color-primary;
-//   }
-// }
-
 // Using OOP to extend styles instead of using Mixins
 .heading {
   color: $color-primary;
   font-size: $font-lg;
   background-color: $color-secondary;
   text-align: center;
+}
+
+// Placeholder selectors do not get compiled to main.css by themselves.
+// But only if something extends it
+// Placeholder selectors start with '%'
+%headingPlaceHolder {
+  color: $color-secondary;
+  font-size: $font-md;
+  background-color: $color-primary;
+  text-align: left;
 }
 
 @function doubleFontSize($fontsize) {
@@ -78,7 +61,7 @@ h1 {
 }
 
 .footer h3 {
-  @extend h1;
+  @extend %headingPlaceHolder;
 
   &:hover {
     background-color: lighten($color: green, $amount: 20%);

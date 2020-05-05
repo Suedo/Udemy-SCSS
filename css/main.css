@@ -20,14 +20,21 @@ a {
   font-weight: 800;
 }
 
-.heading, h1, .footer h3 {
+.heading, h1 {
   color: orange;
   font-size: 40px;
   background-color: gray;
   text-align: center;
 }
 
-h1:hover, .footer h3:hover {
+.footer h3 {
+  color: gray;
+  font-size: 30px;
+  background-color: orange;
+  text-align: left;
+}
+
+h1:hover {
   background-color: green;
 }
 
