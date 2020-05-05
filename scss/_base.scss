@@ -7,6 +7,10 @@ $font-dancingScript: "Dancing Script", cursive;
 $font-JosefinSans: "Josefin Sans", sans-serif;
 $font-nunito: "Nunito", sans-serif;
 
+body {
+  background: $color-dark;
+}
+
 @mixin flexLayout {
   display: flex;
   justify-content: center;

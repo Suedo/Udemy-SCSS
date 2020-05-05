@@ -18,3 +18,50 @@
     @include centering(50%);
   }
 }
+
+// .about-us {
+//   height: 90vh;
+//   display: flex;
+//   align-items: center;
+// }
+
+.about-us {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+
+  &-left {
+    width: 40%;
+    position: relative;
+    left: -200px;
+
+    img {
+      width: auto;
+      opacity: 0.7;
+    }
+  }
+
+  &-right {
+    @include flexLayout;
+    flex-direction: column;
+    padding-right: 100px;
+
+    .stars {
+      margin: 30px 0;
+    }
+
+    .star {
+      font-size: 15px;
+      color: $color-primary;
+      margin-left: 10px;
+    }
+
+    p.description {
+      font-family: $font-JosefinSans;
+      font-size: 25px;
+      font-style: italic;
+      color: $color-secondary;
+      text-align: justify;
+    }
+  }
+}

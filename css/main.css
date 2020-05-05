@@ -1,3 +1,7 @@
+body {
+  background: #262626;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -33,6 +37,62 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.about-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-us-left {
+  width: 40%;
+  position: relative;
+  left: -200px;
+}
+
+.about-us-left img {
+  width: auto;
+  opacity: 0.7;
+}
+
+.about-us-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 100px;
+}
+
+.about-us-right .stars {
+  margin: 30px 0;
+}
+
+.about-us-right .star {
+  font-size: 15px;
+  color: #d3ab55;
+  margin-left: 10px;
+}
+
+.about-us-right p.description {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 25px;
+  font-style: italic;
+  color: #bbb;
+  text-align: justify;
 }
 
 .logo {
