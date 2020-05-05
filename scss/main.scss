@@ -11,7 +11,7 @@ a {
 }
 
 .nav {
-  background-color: $color-primary;
+  background-color: transparentize($color-primary, 0.3);
 
   ul li {
     list-style: none;
@@ -65,6 +65,10 @@ a {
   text-align: center;
 }
 
+@function doubleFontSize($fontsize) {
+  @return $fontsize * 2;
+}
+
 h1 {
   @extend .heading;
 
@@ -75,4 +79,12 @@ h1 {
 
 .footer h3 {
   @extend h1;
+
+  &:hover {
+    background-color: lighten($color: green, $amount: 20%);
+  }
+}
+
+.banner p {
+  font-size: doubleFontSize($font-md);
 }
