@@ -1,0 +1,58 @@
+$color-primary: orange;
+$color-secondary: gray;
+$color-tertiary: royalblue;
+
+$font-lg: 40px;
+$font-md: 30px;
+$font-sm: 20px;
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  background-color: $color-primary;
+
+  ul li {
+    list-style: none;
+  }
+
+  a {
+    font-size: $font-sm;
+    color: $color-secondary;
+
+    &:hover {
+      color: $color-tertiary;
+      font-weight: 800;
+    }
+  }
+}
+
+// 50px is default value
+@mixin headingStyles($fontsize: 50px) {
+  font-size: $fontsize;
+  text-align: center;
+  color: $color-secondary;
+}
+
+// these '...' are very important, without this spread, it will fail
+@mixin transition($param...) {
+  transition: $param;
+}
+
+.banner h1 {
+  $color-secondary: rgb(221, 129, 75); // overriding color
+  // $color-secondary: rgb(221, 129, 75) !global; // overriding color globally
+
+  @include headingStyles($font-lg);
+}
+
+.footer {
+  @include headingStyles($font-md);
+  @include transition(color 0.5s, background-color 1s);
+
+  &:hover {
+    color: $color-tertiary;
+    background-color: $color-primary;
+  }
+}
