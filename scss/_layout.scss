@@ -57,3 +57,23 @@
     }
   }
 }
+
+.gallery {
+  .cards-wrapper {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-gap: 10px;
+    border: 8px solid $color-primary;
+
+    div.card {
+      border: 2px solid $color-primary;
+      position: relative;
+
+      &-overlay {
+        position: absolute;
+        margin: 1rem 0;
+        padding: 1rem;
+      }
+    }
+  }
+}

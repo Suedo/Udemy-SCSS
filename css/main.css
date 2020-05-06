@@ -2,6 +2,18 @@ body {
   background: #262626;
 }
 
+button {
+  border: 1px solid #d3ab55;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #d3ab55;
+  color: #262626;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -104,6 +116,25 @@ body {
   text-align: justify;
 }
 
+.gallery .cards-wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid: repeat(2, 1fr)/repeat(3, 1fr);
+  grid-gap: 10px;
+  border: 8px solid #d3ab55;
+}
+
+.gallery .cards-wrapper div.card {
+  border: 2px solid #d3ab55;
+  position: relative;
+}
+
+.gallery .cards-wrapper div.card-overlay {
+  position: absolute;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
 .logo {
   font-size: 70px;
   color: #d3ab55;
@@ -168,16 +199,42 @@ body {
   letter-spacing: 1px;
   color: #d3ab55;
   background-color: transparent;
-  border: 1px solid #d3ab55;
   outline: none;
-  cursor: pointer;
-  border-radius: 5%;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  border-radius: 10%;
 }
 
-.main-btn:hover {
-  background-color: #d3ab55;
-  color: #262626;
+img.card {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-overlay {
+  background-color: rgba(211, 171, 85, 0.6);
+  color: #fff;
+}
+
+.card-overlay-heading {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.card-overlay-paragraph {
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.card-overlay-btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: calc(70%);
+  padding: 0.3rem 0.1rem 0.1rem 0.1rem;
+  border-radius: 10%;
+  color: #9a7628;
 }
 /*# sourceMappingURL=main.css.map */
