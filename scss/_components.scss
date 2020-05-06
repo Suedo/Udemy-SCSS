@@ -87,3 +87,11 @@ img.card {
     color: darken($color-primary, 20%);
   }
 }
+
+.footer {
+  &-copyright-paragraph {
+    font-family: $font-JosefinSans;
+    color: $color-secondary;
+    @include textStyles(capitalize);
+  }
+}
