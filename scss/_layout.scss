@@ -118,7 +118,7 @@
 
 .navbar {
   position: relative;
-  z-index: 2000;
+  z-index: 100;
 
   &-navigation {
     display: flex;
@@ -127,40 +127,61 @@
       width: 50vw;
       height: 100vh;
       background-color: $color-dark;
+      transition: left 0.5s cubic-bezier(1, 0, 0, 1);
+
+      // https://stackoverflow.com/a/18747559
+      // You need both 2D coordinates to make position fixed work
       position: fixed;
-      left: 0;
+      left: -50vw;
+      top: 0;
     }
 
     &-right {
       width: 50vw;
       height: 100vh;
       background-color: #1f1d1d;
-      position: fixed;
-      right: 0;
+      transition: right 0.5s cubic-bezier(1, 0, 0, 1);
+
       @include flexLayout;
+      position: fixed;
+      right: -50vw;
+      top: 0;
     }
   }
 }
 
-.left-image {
-  width: 50%;
-  position: absolute;
-  box-shadow: 0 15px 60px rgba($color-black, 0.4);
-  opacity: 0.7;
-  border-radius: 10px;
+// -------------------------------------------------------------------------------------------
+// Convert horizontal hamburger menu into cross mark
+// -------------------------------------------------------------------------------------------
 
-  &-1 {
-    top: 15%;
-    left: 15%;
-  }
-
-  &-2 {
-    top: 35%;
-    left: 25%;
-  }
-
-  &-3 {
-    top: 55%;
-    left: 35%;
-  }
+// clickevent is CSS
+// onclick of the hamburger menu, the navigation elements will appear
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
+  left: 0;
 }
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+  right: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu {
+  // define the name of the transition: called in `transition: transform 0.4s;` of .menu
+  transform: rotateZ(90deg);
+  color: red;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+  transform: rotateZ(-40deg);
+  color: red;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+  opacity: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+  transform: rotateZ(40deg);
+  color: red;
+}
+
+// -------------------------------------------------------------------------------------------
