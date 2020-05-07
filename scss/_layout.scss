@@ -115,3 +115,52 @@
     }
   }
 }
+
+.navbar {
+  position: relative;
+  z-index: 2000;
+
+  &-navigation {
+    display: flex;
+
+    &-left {
+      width: 50vw;
+      height: 100vh;
+      background-color: $color-dark;
+      position: fixed;
+      left: 0;
+    }
+
+    &-right {
+      width: 50vw;
+      height: 100vh;
+      background-color: #1f1d1d;
+      position: fixed;
+      right: 0;
+      @include flexLayout;
+    }
+  }
+}
+
+.left-image {
+  width: 50%;
+  position: absolute;
+  box-shadow: 0 15px 60px rgba($color-black, 0.4);
+  opacity: 0.7;
+  border-radius: 10px;
+
+  &-1 {
+    top: 15%;
+    left: 15%;
+  }
+
+  &-2 {
+    top: 35%;
+    left: 25%;
+  }
+
+  &-3 {
+    top: 55%;
+    left: 35%;
+  }
+}
