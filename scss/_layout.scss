@@ -19,12 +19,6 @@
   }
 }
 
-// .about-us {
-//   height: 90vh;
-//   display: flex;
-//   align-items: center;
-// }
-
 .about-us {
   display: grid;
   grid-template: 90vh / 1fr 1fr;
@@ -61,5 +55,112 @@
       color: $color-secondary;
       text-align: justify;
     }
+  }
+}
+
+.gallery {
+  .cards-wrapper {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-gap: 10px;
+    border: 8px solid $color-primary;
+
+    div.card {
+      border: 2px solid $color-primary;
+      position: relative;
+
+      &-overlay {
+        position: absolute;
+        margin: 1rem 0;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 70px 0;
+  @include flexLayout;
+  flex-direction: column;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+
+  .social-media {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    margin-bottom: 70px;
+
+    &-item {
+      list-style: none;
+    }
+
+    &-link {
+      text-decoration: none;
+      font-size: 50px;
+      color: $color-secondary;
+
+      i {
+        transition: all 0.4s;
+        color: $color-secondary;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  position: relative;
+  z-index: 2000;
+
+  &-navigation {
+    display: flex;
+
+    &-left {
+      width: 50vw;
+      height: 100vh;
+      background-color: $color-dark;
+      position: fixed;
+      left: 0;
+    }
+
+    &-right {
+      width: 50vw;
+      height: 100vh;
+      background-color: #1f1d1d;
+      position: fixed;
+      right: 0;
+      @include flexLayout;
+    }
+  }
+}
+
+.left-image {
+  width: 50%;
+  position: absolute;
+  box-shadow: 0 15px 60px rgba($color-black, 0.4);
+  opacity: 0.7;
+  border-radius: 10px;
+
+  &-1 {
+    top: 15%;
+    left: 15%;
+  }
+
+  &-2 {
+    top: 35%;
+    left: 25%;
+  }
+
+  &-3 {
+    top: 55%;
+    left: 35%;
   }
 }

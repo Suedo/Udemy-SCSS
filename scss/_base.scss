@@ -1,5 +1,6 @@
 $color-dark: #262626;
 $color-black: #000;
+$color-white: #fff;
 $color-primary: #d3ab55;
 $color-secondary: #bbb;
 
@@ -9,6 +10,17 @@ $font-nunito: "Nunito", sans-serif;
 
 body {
   background: $color-dark;
+}
+
+button {
+  border: 1px solid $color-primary;
+  transition: all 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary;
+    color: $color-dark;
+  }
 }
 
 @mixin flexLayout {
@@ -24,10 +36,16 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@mixin textStyles {
+@mixin textStyles($transform: uppercase) {
   font-weight: 300;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: $transform;
+}
+
+@mixin gridCenter {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 * {
